@@ -38,6 +38,10 @@
       duration = 750,
       root;
 
+    var color = ["#2C93E8", "#838690", "#F56C4E", "#A60F2B", "#648C85", "#B3F2C9", "#528C18", "#C3F25C", "#2C93E8", "#838690", "#F56C4E", "#A60F2B", "#648C85", "#B3F2C9", "#528C18", "#C3F25C", "#2C93E8", "#838690", "#F56C4E", "#A60F2B", "#648C85",
+      "#B3F2C9", "#528C18", "#C3F25C", "#2C93E8", "#838690", "#F56C4E", "#A60F2B", "#648C85", "#B3F2C9", "#528C18", "#C3F25C", "#2C93E8", "#838690", "#F56C4E", "#A60F2B", "#648C85", "#B3F2C9", "#528C18", "#C3F25C"
+    ];
+
     var tree = d3.layout.tree()
       .size([height, width]);
 
@@ -126,8 +130,9 @@
 
       nodeUpdate.select("circle")
         .attr("r", 7)
-        .style("fill", function(d) {
-          return d._children ? "lightsteelblue" : "#fff";
+        .style("fill", function(d, i) {
+          // return d._children ? "lightsteelblue" : "#fff";
+          return color[i];
         });
 
       nodeUpdate.select("text")
